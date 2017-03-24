@@ -30,4 +30,14 @@
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 
+    <!-- Spring -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:config/spring/spring-common.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 </web-app>

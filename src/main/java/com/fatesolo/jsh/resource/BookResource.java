@@ -2,42 +2,39 @@ package com.fatesolo.jsh.resource;
 
 import com.fatesolo.jsh.entity.Book;
 import com.fatesolo.jsh.entity.Result;
+import com.fatesolo.jsh.service.BookService;
+import org.springframework.stereotype.Controller;
 
+import javax.annotation.Resource;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 @Path("/book")
 @Consumes(MediaType.APPLICATION_XML)
 @Produces(MediaType.APPLICATION_XML)
 public class BookResource {
 
+    @Resource
+    private BookService service;
+
     @GET
     @Path("/{id}")
     public Book getBookById(@PathParam("id") int id) {
-        Book book = new Book();
-        book.setId(id);
-        book.setName("Book " + id);
-        book.setAuthor("Author " + id);
-        return book;
+        return service.getBookById(id);
     }
 
     @GET
     @Path("/")
     public List<Book> getBooks() {
-        List<Book> books = new ArrayList<>();
-        books.add(getBookById(1));
-        books.add(getBookById(2));
-        books.add(getBookById(3));
-
-        return books;
+        return service.getBooks();
     }
 
     @POST
     @Path("/")
     public Result addBook(Book book) {
-        return Result.success(book.getName());
+        return service.addBook(book) ? Result.success() : Result.failure();
     }
 
 }

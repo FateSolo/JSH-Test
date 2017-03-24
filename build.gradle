@@ -15,8 +15,30 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 
     /**
+     * Druid
+     */
+    compile 'com.alibaba:druid:1.0.28'
+
+    /**
+     * Mysql
+     */
+    compile 'mysql:mysql-connector-java:6.0.5'
+
+    /**
+     * Hibernate
+     */
+    compile 'org.hibernate:hibernate-core:5.2.7.Final'
+
+    /**
      * Jersey
      */
-    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.25.1'
+    compile 'org.glassfish.jersey.ext:jersey-spring3:2.25.1'
+
+    /**
+     * Spring
+     */
+    compile 'org.springframework:spring-orm:4.3.7.RELEASE'
+    compile 'org.springframework:spring-web:4.3.7.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:1.11.1.RELEASE'
 
 }
