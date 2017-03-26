@@ -20,6 +20,11 @@ dependencies {
     compile 'com.alibaba:druid:1.0.28'
 
     /**
+     * Gson
+     */
+    compile 'com.google.code.gson:gson:2.7'
+
+    /**
      * Mysql
      */
     compile 'mysql:mysql-connector-java:6.0.5'
@@ -28,6 +33,13 @@ dependencies {
      * Hibernate
      */
     compile 'org.hibernate:hibernate-core:5.2.7.Final'
+
+    /**
+     * Logback
+     */
+    compile 'ch.qos.logback:logback-classic:1.2.1'
+    compile 'org.logback-extensions:logback-ext-spring:0.1.4'
+    compile 'org.slf4j:jcl-over-slf4j:1.7.22'
 
     /**
      * Jersey
